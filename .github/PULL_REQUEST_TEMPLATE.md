@@ -1,6 +1,6 @@
 <!--
 Please make sure to read the Pull Request Guidelines:
-https://github.com/archX3/js-camp/blob/master/.github/CONTRIBUTING.md#pull-request-guidelines
+https://github.com/archX3/bumble-bee-js/blob/master/.github/CONTRIBUTING.md#pull-request-guidelines
 -->
 
 <!-- PULL REQUEST TEMPLATE -->

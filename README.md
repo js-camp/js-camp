@@ -1,5 +1,5 @@
 <h1 align=center><b>JS Camp</b></h1>
-<p>The official website for the JS Camp Accra Community</p>
+<p align="center">The official website for the JS Camp Accra Community</p>
  
 ### Get the code 
 ```terminal
