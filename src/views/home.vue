@@ -51,7 +51,7 @@
         </div>
       </div>
     </section>
-    <!-- Count Bar End -->
+    <!-- Time left Count Bar End -->
 
     <!-- About SECTION Start -->
     <section id="about" class="section-padding">

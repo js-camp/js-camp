@@ -1,18 +1,32 @@
-# kobina-koomson-v
+<h1 align=center><b>JS Camp</b></h1>
+<p>The official website for the JS Camp Accra Community</p>
+ 
+### Get the code 
+```terminal
+$ git clone https://github.com/<url>.git
+$ cd js-camp
 
-The official website for the JS Camp Accra Community
+```
 
 ## Build Setup
 
-``` bash
+```terminal
 # install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+$ yarn | $ yarn install | $ npm install
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+```terminal
+# serve with hot reload at localhost:8080
+$ npm run dev
+```
+
+```terminal
+# build for production with minification
+$ npm run build
+```
+
+The project is built as a single page application based on Vue.
+
+For detailed explanation on how things work,
+consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
