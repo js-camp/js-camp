@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "key-spacing": "off",
+    "no-multi-spaces": "off",
+    "no-unused-vars": "warn",
+    "brace-style": "off",
+    "no-extra-semi": "warn",
+    "semi": "off",
+    "comma-dangle": "off",
+    "quotes": "off"
+  }
+}
