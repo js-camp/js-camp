@@ -1,7 +1,7 @@
 <!--
 IMPORTANT: Please use the following link to create a new issue:
 
-  [New Issue](https://github.com/archX3/bumble-bee-js/issues)
+  [New Issue](https://github.com/js-camp/js-camp-website/issues)
 
 If your issue was not created using the app above, it will be closed immediately.
 

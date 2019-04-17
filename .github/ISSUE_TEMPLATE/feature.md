@@ -1,7 +1,7 @@
 Before opening:
 
-- [Search for duplicate or closed issues](https://github.com/archX3/bumble-bee-js/issues?utf8=%E2%9C%93&q=is%3Aissue)
-- Read the [contributing guidelines](https://github.com/archX3/bumble-bee-js/blob/master/.github/CONTRIBUTING.md)
+- [Search for duplicate or closed issues](https://github.com/js-camp/js-camp-website/issues?utf8=%E2%9C%93&q=is%3Aissue)
+- Read the [contributing guidelines](https://github.com/js-camp/js-camp-website/blob/master/.github/CONTRIBUTING.md)
 
 Feature requests must include:
 

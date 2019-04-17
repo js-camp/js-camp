@@ -2,7 +2,7 @@ Before opening:
 
 - [Search for duplicate or closed issues](#)
 - [Validate](#) and [lint](#) any HTML to avoid common problems
-- Read the [contributing guidelines](https://github.com/archX3/js-camp/blob/master/.github/CONTRIBUTING.md)
+- Read the [contributing guidelines](https://github.com/js-camp/js-camp-website/blob/master/.github/CONTRIBUTING.md)
 
 Bug reports must include:
 
