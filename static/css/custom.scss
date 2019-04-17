@@ -1,0 +1,912 @@
+//@import "vendor/bumble-bee-css/css/core";
+@import "vendor/bumble-bee-css/css/colors";
+@import "nav";
+
+$b-gray : #818999;
+
+.cl-pri
+{
+  color : $orangeColor;
+}
+
+.cl-pri2
+{
+  color : $darkBlue;
+}
+
+.cl-pri2-1
+{
+  color : $darkBlue2;
+}
+
+section.container
+{
+  background-color   : $t-dark-blue;
+  position           : relative;
+  z-index            : 10;
+  -webkit-transition : top .3s;
+  -moz-transition    : top .3s;
+  -ms-transition     : top .3s;
+  -o-transition      : top .3s;
+  transition         : top .3s;
+
+  &.contact
+  {
+    background-color : #fff;
+  }
+
+  .home-text
+  {
+    margin-top : calc(50% - 145px);
+    //margin-top: 20%;
+    text-align : center;
+    color      : #ffffff;
+
+    h3
+    {
+      font-size   : 57px;
+      font-family : "", sans-serif;
+      //margin-top:inherit;
+    }
+    .slogan
+    {
+      background-color : #fff;
+      color            : $darkBlue;
+
+      .dots
+      {
+        line-height : 0;
+      }
+    }
+  }
+
+  .txt
+  {
+    background-color : #fff;
+  }
+
+  .tabHead, .activeTabHead
+  {
+    padding     : 10px 20px;
+    max-width   : unset;
+    text-align  : center;
+    font-weight : unset;
+    cursor      : pointer;
+    width       : 50%;
+  }
+
+  .tabHead.activeTabHead, .activeTabHead
+  {
+    background-color : #fff;
+    a
+    {
+      font-weight : bold;
+    }
+  }
+
+  .tabHead
+  {
+    &:hover
+    {
+      background-color : fade_out($orangeColor, .5);
+    }
+  }
+
+  //region specific sections
+  &.home
+  {
+    .col-2
+    {
+      position : relative;
+    }
+  }
+
+  .overlay
+  {
+    background-color : $t-dark-blue;
+    opacity          : .7;
+    //z-index: 2;
+    background       : linear-gradient(45deg, rgba(24, 27, 39, 1) 58%, rgba(68, 51, 41, 1) 66%, rgba(255, 153, 50, 0.65) 100%);
+  }
+
+  .srv-con
+  {
+    padding-right : 9.3vw !important;
+    padding-left  : 9.3vw !important;
+
+    .srv-con-inr
+    {
+      padding-top    : 80px !important;
+      padding-right  : 6.6vw !important;
+      padding-bottom : 80px !important;
+      padding-left   : 6.6vw !important;
+
+      .txt-img-con
+      {
+        h2
+        {
+          margin-bottom : 15px;
+        }
+
+        p
+        {
+          line-height : 1.71429;
+        }
+      }
+    }
+  }
+
+  .team-mate
+  {
+
+    .img-con
+    {
+      width            : 170px;
+      height           : 170px;
+      background-color : #89ff64;
+      //margin: 0 auto;
+    }
+
+    .det-con
+    {
+      h4
+      {
+        color : $darkBlue2;
+        //#726f81
+
+        & + p
+        {
+          color : #726f81;
+          //
+        }
+      }
+    }
+  }
+
+  &.what-i-do-sec
+  {
+  }
+
+}
+
+.molecule-bg
+{
+  background-image : url(../img/molecule-shap-ebg.jpg);
+
+  &:first-of-type
+  {
+    background-position-x : 115%;
+    background-position-y : 190%;
+  }
+
+  &.tr-cap
+  {
+    background-position-x : -54%;
+    background-position-y : 285%;
+  }
+
+  &:last-child
+  {
+    background-position-x : -54%;
+    background-position-y : -262%;
+  }
+
+  &.bl-cap
+  {
+    background-position-x : 116%;
+    background-position-y : -16%;
+  }
+}
+
+.prod-proc-con
+{
+  *
+  {
+    transition : .3s cubic-bezier(.55,.03,.12,1);;
+  }
+  .prod-proc
+  {
+    & > div:nth-of-type(1)
+    {
+      div:hover
+      {
+        border-bottom: 1px solid;
+      }
+
+      //div:nth-of-type(1):hover
+      //{
+      //  border-bottom: 1px solid;
+      //}
+
+      //div:nth-of-type(1):hover  div + div > .prod-proc-exp
+      //{
+      //  display: block !important;
+      //}
+    }
+    &:hover
+    {
+      & > div:nth-of-type(1)
+      {
+        height : 65%;
+
+        div > div:nth-of-type(2)
+        {
+          font-size : 16px;
+        }
+      }
+      & > div:nth-of-type(2)
+      {
+        //display : block !important;
+      }
+    }
+
+  }
+
+  .prod-proc-exp
+  {
+    p
+    {
+      transition-delay : .4s;
+    }
+  }
+
+}
+
+.bg-img
+{
+  background-image  : url(images/cleanWH.jpg);
+  background-size   : cover;
+  background-repeat : no-repeat;
+  //z-index: 1;
+  filter            : blur(3px);
+}
+
+.hero-bg
+{
+  background-image : url(images/hero16x9-3-br-sm-2.jpg);
+  filter           : blur(4px);
+}
+
+section.container:nth-of-type(2)
+{
+  //background-color: #3eff1b;
+}
+
+section.container:nth-of-type(3)
+{
+  //background-color: #4d58ff;
+}
+
+section.container:nth-of-type(4)
+{
+  //background-color: #ff5348;
+}
+
+.soc-media
+{
+  background-color   : $white;
+  height             : 155px;
+  width              : 40px;
+  -webkit-box-shadow : 0 0 5px rgba(0, 0, 0, .5);
+  -moz-box-shadow    : 0 0 5px rgba(0, 0, 0, .5);
+  box-shadow         : 0 0 5px rgba(0, 0, 0, .5);
+  right              : 0;
+  top                : 80px;
+  //top: calc(50% - 75px); //msg uncomment if it shd be centered vertically
+
+  .platform
+  {
+    a
+    {
+      background-repeat   : no-repeat;
+      background-image    : url("images/clean-social-icons.jpg");
+      background-position : -64px 1px;
+      //padding: 20px 2px;
+      opacity             : .25;
+      transition          : opacity .3s;
+      background-size     : 450px;
+    }
+    a:hover
+    {
+      opacity : 1;
+    }
+
+    &.fb
+    {
+      a
+      {
+        background-position : -7px 8px;
+      }
+    }
+
+  }
+}
+
+$aboutDChevronDim : 45px;
+.about-d-chevron
+{
+  $adcH : $aboutDChevronDim / 2;
+  height                : $aboutDChevronDim;
+  width                 : $aboutDChevronDim;
+  //background-color: #fff;
+  bottom                : $adcH;
+  left                  : calc(50% - 22.5px); //TODO remember to replace this with the value of the expression
+
+  background            : url(images/scroll.gif) 50% 50% no-repeat rgba(215, 181, 94, 0);
+  //border: 2px solid #fff;
+  border-radius         : 50%;
+  -moz-border-radius    : 50%;
+  -webkit-border-radius : 50%;
+  display               : block;
+  cursor                : pointer;
+  -webkit-transition    : all 300ms ease-in-out 0s;
+  -moz-transition       : all 300ms ease-in-out 0s;
+  -ms-transition        : all 300ms ease-in-out 0s;
+  -o-transition         : all 300ms ease-in-out 0s;
+  transition            : all 300ms ease-in-out 0s;
+  //width: 45px;
+  position              : absolute;
+  //left: 50%;
+  //bottom: 0;
+
+  &:hover
+  {
+    background-color : $orangeColor;
+    transform        : scale(1.01, 1.01);
+  }
+}
+
+.contact-form
+{
+  &.no-input-spacing
+  {
+    right : -65px;
+
+    .fields-row
+    {
+      > input
+      {
+        border-bottom : 0;
+        margin-bottom : 0;
+      }
+      > input:last-of-type
+      {
+        border-bottom : 1px solid var(--dividerColor) !important;
+      }
+    }
+
+    .field-wrap
+    {
+      margin-right : 0 !important;
+      width        : 50% !important;
+
+      &:first-child
+      {
+        input
+        {
+          border-right : 0;
+        }
+      }
+    }
+  }
+  input
+  {
+    padding          : 10px;
+    background-color : fade_out($orangeColor, .9);
+    border-color     : $orangeColor;
+    color            : #fff;
+    margin-bottom    : 9% !important;
+  }
+
+  textarea
+  {
+    background-color : fade_out($orangeColor, .9);
+    border-color     : $orangeColor;
+    color            : #fff;
+  }
+
+  button
+  {
+    cursor             : pointer;
+    background-color   : $orangeColor;
+    color              : nth($colors, 1);
+    border-color       : $orangeColor;
+    -webkit-transition : background-color .3s;-moz-transition : background-color .3s;-ms-transition : background-color .3s;-o-transition : background-color .3s;transition : background-color .3s;
+
+    &:hover
+    {
+      background-color : fade_out($orangeColor, 0.2);
+      //color: fade_out($orangeColor, 0.3);
+      //border-color:$orangeColor
+    }
+  }
+
+  a
+  {
+    color              : $darkBlue2;
+    -webkit-transition : color .3s;-moz-transition : color .3s;-ms-transition : color .3s;-o-transition : color .3s;transition : color .3s;
+    &:hover
+    {
+      color : $darkBlue;
+    }
+  }
+}
+
+.blue-btn
+{
+  background-color   : $darkBlue2;
+  color              : nth($colors, 2);
+  -webkit-transition : width .4s, min-width .4s;
+  -moz-transition    : width .4s;
+  -ms-transition     : width .4s;
+  -o-transition      : width .4s;
+  transition         : width .4s, min-width .4s, max-width .4s;
+  cursor             : pointer;
+
+  & > i
+  {
+    -webkit-transition : display .4s;
+    -moz-transition    : display .4s;
+    -ms-transition     : display .4s;
+    -o-transition      : display .4s;
+    transition         : display .4s;
+  }
+
+  &:hover > i
+  {
+    display : inline;
+  }
+}
+
+//button.fa-long-arrow-right{
+//
+//}
+
+.tz-icon-color
+{
+  color : $orangeColor;
+}
+
+footer
+{
+  height           : 350px;
+  color            : #fff;
+  //background-color: #0078ff;
+  background-color : #021224;
+
+  .tz-icon-color
+  {
+    color : $orangeColor;
+  }
+
+  .footer-above
+  {
+    padding-top : 50px;
+
+    .container
+    {
+      width   : 80%;
+      padding : 0 15px;
+    }
+
+    .footer-col
+    {
+      height : 169px;
+
+      h3
+      {
+        font-family   : 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight   : 700;
+        //text-transform: uppercase;
+        margin-bottom : 20px;
+        font-size     : 14px;
+      }
+    }
+
+    .menu li :hover:not(.disabledMenuItem)
+    {
+      background-color : rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+
+  .atw
+  {
+    //height: 200px;
+
+    .btn-social
+    {
+      font-size     : 20px;
+      line-height   : 38px;
+      display       : inline-block;
+      width         : 50px;
+      height        : 50px;
+      text-align    : center;
+      border        : 2px solid white;
+      border-radius : 100%;
+    }
+
+    .btn-outline
+    {
+      font-size  : 20px;
+      //margin-top: 15px;
+      transition : all 0.3s ease-in-out;
+      color      : white;
+      border     : solid 2px white;
+      background : transparent;
+    }
+
+    .btn-outline.active, .btn-outline:active, .btn-outline:focus, .btn-outline:hover
+    {
+      color : $orangeColor;
+    }
+  }
+
+  .list-inline-item:not(:last-child)
+  {
+    margin-right : 5px;
+  }
+
+  .container
+  {
+    background-color : transparent;
+  }
+
+  .icon-large
+  {
+    font-size : 35px !important;
+  }
+
+  .subscribe
+  {
+    background-color : #fff;
+    a
+    {
+      height         : auto;
+      line-height    : normal !important;
+      position       : absolute;
+      right          : 15px;
+      top            : 7px;
+      vertical-align : top;
+    }
+  }
+}
+
+.txt-img-con
+{
+
+  h2
+  {
+    color      : $darkBlue;
+    text-align : center;
+  }
+
+  & > div
+  {
+    background-size     : contain;
+    background-repeat   : no-repeat;
+    background-position : center;
+  }
+
+  .ppwk
+  {
+    background-image : url("images/pw.png");
+  }
+
+  .aoaw
+  {
+    background-image : url("images/aoaw.png");
+  }
+
+  .cotogo
+  {
+    background-image : url("images/cotogo.png");
+  }
+}
+
+.testimonials
+{
+  .testimonial
+  {
+    .quote-marks
+    {
+      font-size   : 650px;
+      font-family : freeSans, Arial, sans-serif;
+      line-height : .9;
+    }
+
+    .profile-pic
+    {
+      filter : grayscale(2);
+    }
+  }
+
+  .control
+  {
+    span
+    {
+      border-color     : $orangeColor;
+      background-color : fade_out($orangeColor, .9);
+      cursor           : pointer;
+      transition       : background-color .3s;
+
+      &:hover
+      {
+        background-color : fade_out($orangeColor, .3);
+      }
+    }
+
+    .active
+    {
+      background-color : $orangeColor;
+    }
+  }
+}
+
+
+.moa-img
+{
+  background-image : url(images/hero-2x3.jpeg);
+}
+
+svg
+{
+  &.icon
+  {
+    width   : 100%;
+    height  : 100%;
+    padding : 7%;
+    //fill: nth($colors, 14);
+    fill    : #fff;
+  }
+}
+
+.exp-img-c
+{
+  img
+  {
+    transform  : rotate(10deg) scale(1.3);
+    transition : all .3s ease;
+
+    &:hover
+    {
+    }
+  }
+
+  .overlay
+  {
+    display : none;
+    //cursor: pointer;
+  }
+
+  &:hover
+  {
+    & > .overlay
+    {
+      display : block;}
+    & > img
+    {
+      transform : rotate(0deg) scale(1);
+    }
+  }
+}
+
+@keyframes FadeIn
+{
+  0%
+  { opacity : 0; -webkit-transform : scale(.1);}
+  75%
+  {opacity : 1; -webkit-transform : scale(1.1);}
+  100%
+  {-webkit-transform : scale(1); }
+}
+
+@keyframes fadeBlur
+{
+  0%
+  {filter : blur(5px);}
+  70%
+  {filter : blur(0px);}
+  100%
+  {filter : grayscale(0.65);}
+}
+
+.fade-blur
+{
+  animation-name     : fadeBlur;
+  animation-duration : .7s;
+  filter             : grayscale(0.65);
+}
+
+.hex-mask
+{
+  -webkit-clip-path  : url("images/hex-mask.svg#hexagonPath");
+  -moz-clip-path     : url("images/hex-mask.svg#hexagonPath");
+  -o-clip-path       : url("images/hex-mask.svg#hexagonPath");
+  clip-path          : url("images/hex-mask.svg#hexagonPath");
+  -webkit-mask-image : url("images/hex-mask.svg");
+  -moz-mask-image    : url("images/hex-mask.svg");
+  -o-mask-image      : url("images/hex-mask.svg");
+  mask-image         : url("images/hex-mask.svg");
+  mask-border        : round;
+  transform          : scale(0);
+  -webkit-animation  : FadeIn .4s ease-in-out; -webkit-animation-fill-mode : both;
+
+  &:nth-child(1)
+  { -webkit-animation-delay : .1s }
+  &:nth-child(2)
+  { -webkit-animation-delay : .4s }
+  &:nth-child(3)
+  { -webkit-animation-delay : .7s }
+  &:nth-child(4)
+  { -webkit-animation-delay : 1s }
+  &:nth-child(5)
+  { -webkit-animation-delay : 1.3s }
+  &:nth-child(6)
+  { -webkit-animation-delay : 1.6s }
+  &:nth-child(7)
+  { -webkit-animation-delay : 1.9s }
+  &:nth-child(8)
+  { -webkit-animation-delay : 2.2s }
+  &:nth-child(9)
+  { -webkit-animation-delay : 2.5s }
+  &:nth-child(10)
+  { -webkit-animation-delay : 2.8s }
+
+  &._second_set
+  {
+    -webkit-animation : FadeIn .3s ease-in-out; -webkit-animation-fill-mode : both;
+
+    &:nth-child(1)
+    { -webkit-animation-delay : 1.4s }
+    &:nth-child(2)
+    { -webkit-animation-delay : 1.7s }
+    &:nth-child(3)
+    { -webkit-animation-delay : 2.0s }
+    &:nth-child(4)
+    { -webkit-animation-delay : 2.3s }
+  }
+}
+
+.what-i-do h3
+{
+  $val : 0.4;
+  animation-timing-function : cubic-bezier(.82, -0.02, .58, 1);
+  @for $i from 1 through 3
+  {
+    &:nth-child(#{$i})
+    {
+      animation-duration : #{$val}s;
+    }
+    $val : $val + 0.1
+  }
+}
+
+.cmd
+{
+  font-family : "DejaVu Sans Mono", sans-serif;
+}
+
+.blinking-cursor
+{
+  font-weight       : 100;
+  font-size         : 30px;
+  -webkit-animation : 1s blink step-end infinite;
+  -moz-animation    : 1s blink step-end infinite;
+  -ms-animation     : 1s blink step-end infinite;
+  -o-animation      : 1s blink step-end infinite;
+  animation         : 1s blink step-end infinite;
+}
+
+//region blink anim
+@mixin blink-keyframes
+{
+  from, to
+  {
+    color : transparent;
+  }
+  50%
+  {
+    color : unset;
+  }
+}
+
+@keyframes blink
+{
+  @include blink-keyframes;
+}
+
+@-moz-keyframes blink
+{
+  @include blink-keyframes;
+}
+
+@-webkit-keyframes blink
+{
+  @include blink-keyframes;
+}
+
+@-ms-keyframes blink
+{
+  @include blink-keyframes;
+}
+
+@-o-keyframes blink
+{
+  @include blink-keyframes;
+}
+
+//endregion
+
+.ribbon-label
+{
+  $ribbon-color : nth($colors, 14);
+  $ribbon-back-color : #854c04;
+  top    : calc(50% - 30px);
+  left   : -19px;
+  filter : drop-shadow(0 0 1px nth($colors, 20));
+
+  //color: nth($colors, 14);
+  &::before, &::after, span::before, span::after
+  {
+    width        : 0;
+    height       : 0;
+    content      : "";
+    border-style : solid;
+    border-width : 10px;
+    //border-top-width : 10px;
+    //border-right-width : 10px;
+    border-color : transparent;
+    position     : absolute;
+    top          : calc(100% + 1px);
+    left         : -1px;
+  }
+
+  &::before
+  {
+    border-right-color : $ribbon-back-color;
+    border-top-color   : $ribbon-back-color;
+  }
+
+  span::before
+  {
+    border-left-color : $ribbon-color;
+    border-top-color  : $ribbon-color;
+    top               : 0;
+    left              : 100%;
+  }
+  span::after
+  {
+    border-left-color   : $ribbon-color;
+    border-bottom-color : $ribbon-color;
+    top                 : calc(100% - 20px);
+    left                : 100%;
+  }
+
+}
+
+/* Swipe 2 required styles */
+.swipe
+{
+  overflow   : hidden;
+  visibility : hidden;
+  position   : relative;
+}
+
+.swipe-wrap
+{
+  //overflow: hidden;
+  //position: relative;
+}
+
+.swipe-wrap > div
+{
+  float    : left;
+  width    : 100%;
+  position : relative;
+}
+
+.typed-cursor
+{
+  display : none;
+}
+/* END required styles */
