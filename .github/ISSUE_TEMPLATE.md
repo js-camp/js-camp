@@ -8,6 +8,6 @@ If your issue was not created using the app above, it will be closed immediately
 -->
 
 <!--
-Love Bumble-bee js? Please consider supporting us via Patreon or OpenCollective:
+Love JS Camp? Please consider supporting us via Patreon or OpenCollective:
 👉  links coming soon
 -->

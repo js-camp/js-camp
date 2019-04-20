@@ -1,4 +1,4 @@
-<img align="center" src="https://github.com/js-camp/js-camp-website/blob/master/public/img/logos/js-camp-19-cy.png">
+<p align="center"><img src="https://github.com/js-camp/js-camp-website/blob/master/public/img/logos/js-camp-19-cy.png"></p>
 <h1 align=center><b>JS Camp</b></h1>
 <p align="center">The official website for the JS Camp Accra Community</p>
  
@@ -46,36 +46,6 @@ npm run test:e2e
 
 
 The project is built as a single page application based on Vue.
-
+We would love to have you contribute to this project. First, do check out the [Code of Conduct](https://github.com/js-camp/js-camp-website/blob/master/.github/code-of-conduct.md) and [how to contribute](https://github.com/js-camp/js-camp-website/blob/master/.github/CONTRIBUTING.md) if you want to contribute.
 For detailed explanation on how things work,
 consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-```json
-{
-"extract-text-webpack-plugin": "^3.0.0",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
-
-    "babel-plugin-syntax-jsx": "^6.18.0",
-
-    "babel-plugin-transform-runtime": "^6.22.0",
-
-    "babel-plugin-transform-vue-jsx": "^3.5.0",
-
-    "babel-preset-env": "^1.3.2",
-
-    "babel-preset-stage-2": "^6.22.0",
-
-    "friendly-errors-webpack-plugin": "^1.6.1",
-
-    "optimize-css-assets-webpack-plugin": "^3.2.0",
-
-    "postcss-import": "^11.0.0",
-
-    "postcss-url": "^7.2.1",
-
-    "shelljs": "^0.7.6",
-
-    "uglifyjs-webpack-plugin": "^1.1.1",
-
-}
-```
