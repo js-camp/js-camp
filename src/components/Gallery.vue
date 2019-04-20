@@ -74,7 +74,6 @@ export default {
   },
   props : { galleryData : {} },
   mounted () {
-    console.log(this.galleryData.images);
   }
 }
 </script>

@@ -13,5 +13,7 @@ script:
   - npm run build
 deploy:
   provider: surge
-  project: dist/
+  project: ./dist/
   skip_cleanup: true
+  domain: js-camp.surge.sh
+

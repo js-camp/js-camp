@@ -49,7 +49,6 @@ export default {
   },
   props : ['year'],
   mounted () {
-    console.log(this.year);
   }
 }
 </script>

@@ -33,7 +33,6 @@ export default {
     ...mapGetters(['community', 'events'])
   },
   created () {
-    console.log('created');
   }
 }
 </script>
