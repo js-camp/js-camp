@@ -1,3 +1,4 @@
+<img align="center" src="https://github.com/js-camp/js-camp-website/blob/master/public/img/logos/js-camp-19-cy.png">
 <h1 align=center><b>JS Camp</b></h1>
 <p align="center">The official website for the JS Camp Accra Community</p>
  
