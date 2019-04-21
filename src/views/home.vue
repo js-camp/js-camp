@@ -12,13 +12,9 @@
       <div id="hero-area" class="hero-area-bg  container-full-bg">
         <!--        <div class="overlay"></div>-->
         <div class="container">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center main-actions" >
             <div class="col-lg-9 col-sm-12">
               <div class="contents text-center">
-                <div class="icon">
-                  <!--                  <i class="lni-mic"></i>-->
-                </div>
-                <!--                <h2 class="head-title">{{community.name}} {{year}}</h2>-->
                 <div class="banner-btn">
                   <a href="#" class="btn btn-common">Get Ticket</a>
                   <a href="#" class="btn btn-common">Apply As Speaker</a>
@@ -562,8 +558,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <!--FIXME Set Image to Real Google Maps Image to ADC-->
-            <!--<object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15864.15480778837!2d-77.44908382752939!3d38.953293865566366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6775cb22a9fa1341!2sThe+Firkin+%26+Fox!5e0!3m2!1sen!2sbd!4v1543773685573"></object>-->
+            <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1403.963542442263!2d-0.22358266736137394!3d5.565746290338953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9bd5cfbe06cb%3A0x4bd95b00aacc9581!2sGhana+Tech+Lab!5e0!3m2!1sen!2sgh!4v1555851842833!5m2!1sen!2sgh"></object>
           </div>
         </div>
       </div>
@@ -702,3 +697,12 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+  .container-full-bg{
+    display: flex;
+
+    .main-actions{
+      margin: auto;
+    }
+  }
+</style>
