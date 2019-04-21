@@ -88,8 +88,10 @@ export default {
   }
   .nivo-lightbox-close{
     color: $accent-color !important;
-    padding: 10px;
+    padding: 10px 0;
     font-size: 25px;
+    text-align: center;
+    width: 35px;
     height: 35px;
     line-height: .4;
     background: transparent;
