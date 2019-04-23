@@ -16,7 +16,7 @@
             <div class="col-lg-9 col-sm-12">
               <div class="contents text-center">
                 <div class="banner-btn">
-                  <a href="#" class="btn btn-common">Get Ticket</a>
+                  <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
                   <a href="#" class="btn btn-common">Apply As Speaker</a>
                 </div>
               </div>
@@ -554,6 +554,7 @@
     <!-- Contact Us Section End -->
 
     <!-- Map SECTION Start -->
+<!-- FIXME set the right url for the    -->
     <section id="google-map-area">
       <div class="container-fluid">
         <div class="row">
@@ -601,7 +602,7 @@
     <footer-section></footer-section>
 
     <!-- Go to Top Link -->
-    <a href="#" class="back-to-top">
+    <a href="#" v-scroll-to="" class="back-to-top">
       <i class="lni-chevron-up"></i>
     </a>
 
@@ -647,7 +648,7 @@ export default {
   data () {
     return {
       title      : 'Kobina George Koomson, Welcome',
-      year       : '2019',
+      // year       : '2019',
       galleryData: {
         images  : [
           { name: 'Group Photo', url: 'reception-team.jpg' },
@@ -669,6 +670,9 @@ export default {
     }
   },
   computed  : {
+    year () {
+      return this.$route.year || new Date().getFullYear();
+    },
     ...mapGetters(['community', 'events'])
   },
   methods   : {
