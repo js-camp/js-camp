@@ -19,7 +19,8 @@
     "no-extra-semi": "warn",
     "semi": "off",
     "comma-dangle": "off",
-    "quotes": "off"
+    "quotes": "off",
+    "one-var": "off"
   },
   "overrides": [
     {

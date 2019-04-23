@@ -40,7 +40,7 @@
               </h3>
             </div>
             <div class="meta-tags">
-              <a href="#" class="btn btn-common">Get Ticket</a>
+              <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
             </div>
           </div>
         </div>

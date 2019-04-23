@@ -4,10 +4,11 @@ import Home from  '../views/home'
 
 export default [
   { path : '/', name : 'home', component : Home },
-  { path : '/2018', name : 'home', component : Home },
-  { path : '/2019', name : 'home', component : Home },
+  { path : '/:year', name : 'home-page-for-year', component : Home },
+  { path : '/:year/speakers', name : 'speakers', component : Home },
+  { path : '/:year/schedule', name : 'schedule', component : Home },
   { path : '/about',
-    name : 'about',
+    name : '/about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
