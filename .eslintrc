@@ -20,7 +20,9 @@
     "semi": "off",
     "comma-dangle": "off",
     "quotes": "off",
-    "one-var": "off"
+    "one-var": "off",
+    "wrap-iife": "off",
+    "no-console": "off"
   },
   "overrides": [
     {

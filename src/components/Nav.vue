@@ -18,12 +18,12 @@
       <transition name="collapsing">
         <div class="collapse navbar-collapse" :class="{'show' : mobNavShow}" id="navbarCollapse">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <!--List Items-->
             <li v-for="listItem in navList "
                 :key="listItem.name" @click="setActiveNavItem(listItem.name)"
                 class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-              <a class="nav-link" href="#" v-scroll-to="listItem.link">
-                {{listItem.name}}
-              </a>
+<!--              <a class="nav-link" :href="`/${listItem.link}`" ></a>-->
+              <router-link tag="a" class="nav-link" :to="`/${listItem.link}`" v-scroll-to="listItem.link">{{listItem.name}}</router-link>
             </li>
           </ul>
         </div>
@@ -57,13 +57,14 @@ export default {
   data () {
     return {
       activeNavItem : 'Home',
-      navList : [
-        { name : 'Home', link : '#header-wrap' },
+      navList : this.navListSet || [
+        { name : 'Home', link : '#' },
         { name : 'About', link : '#about' },
         // { name : 'Schedules', link : '#schedules' },
         { name : 'Speakers', link : '#speaker' },
         { name : 'Gallery', link : '#gallery' },
         { name : 'Sponsors', link : '#sponsors' },
+        { name : 'Code of Conduct', link : 'code-of-conduct' },
         // { name : 'Contact', link : '#contact' }
       ],
       topNavCollapse : false,
@@ -74,6 +75,7 @@ export default {
       }
     }
   },
+  props : ['navListSet'],
   methods : {
     setActiveNavItem (name) {
       this.activeNavItem = name;

@@ -1,30 +1,38 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import VueRouter from 'vue-router'
+import VueRouter   from 'vue-router'
 import VueResource from 'vue-resource'
-import { store } from './store/store'
-import Routes from './routes/routes'
+import { store }   from './store/store'
+import Routes      from './routes/routes'
+import VueScrollReveal from 'vue-scroll-reveal';
+
 
 // import bootstrap vue related items
 // import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import './assets/fonts/line-icons.css'
 import './assets/css/animate.css'
 import './assets/css/main.scss'
-import './assets/css/responsive.css'
 
 // Vue.use(BootstrapVue);
 // main components
-import NavBar from './components/Header'
-import Footer from './components/FooterSection'
+import NavBar      from './components/Nav'
+import Footer      from './components/FooterSection'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+// OR specifying custom default options for all uses of the directive
+Vue.use(VueScrollReveal, {
+  class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+  duration: 800,
+  scale: 1,
+  distance: '10px',
+  mobile: false
+});
 
 const router = new VueRouter({
   routes: Routes,

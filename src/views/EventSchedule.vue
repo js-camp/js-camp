@@ -150,7 +150,7 @@
   </section>
 </template>
 <script>
-  export default {
-    name: 'event-schedule'
-  }
+export default {
+  name: 'event-schedule'
+}
 </script>

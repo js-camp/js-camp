@@ -3,30 +3,7 @@
   <div id="app" class="blk fp global-host ys rltv">
     <!-- Header Area wrapper SECTION Starts -->
 
-    <header id="header-wrap">
-      <!-- Navbar Start -->
-      <nav-bar></nav-bar>
-      <!-- Navbar End -->
-
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg  container-full-bg">
-        <!--        <div class="overlay"></div>-->
-        <div class="container">
-          <div class="row justify-content-center main-actions" >
-            <div class="col-lg-9 col-sm-12">
-              <div class="contents text-center">
-                <div class="banner-btn">
-                  <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
-                  <a href="#" class="btn btn-common">Apply As Speaker</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Hero Area End -->
-
-    </header>
+    <header-wrap/>
 
     <!-- Header Area wrapper End -->
 
@@ -299,70 +276,18 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img1.jpg" alt="">
+          <div class="col-lg-2 col-md-6 col-xs-12"
+               v-for="(attendeeType, index) in attendeeTypes"
+               :key="attendeeType.name"
+               v-scroll-reveal.reset="{delay : 200 + (index * 150)}">
+            <div class="wevent-item">
+              <img class="img-fluid" :src="`/img/event/${'img1.jpg'}`" alt="">
               <div class="overlay-text">
                 <div class="content">
-                  <h3>Frontend Developers</h3>
+                  <h3>{{attendeeType.name}}</h3>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img2.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Backend Developers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img3.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Mobile Developer</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img4.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Dev OPs</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img3.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>UI/UX Designers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img4.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Hiring Managers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">More Event</a>
           </div>
         </div>
       </div>
@@ -627,14 +552,16 @@
 </template>
 
 <script>
-
 import { mapGetters }  from 'vuex'
+// import Wow from '../assets/js/wow'
+
 // import BJumbotron      from 'bootstrap-vue/es/components/jumbotron/jumbotron'
-import Speakers        from '../components/speakers'
-import NavBar          from '../components/Header'
+// @ is an alias to /src
+import Speakers        from '@/components/speakers'
 import Gallery         from '../components/Gallery'
 import callForSponsors from '../components/CallForSponsors'
 import Sponsors        from '../components/Sponsors'
+import HeaderWrap      from './HeaderWrap'
 // import EventSchedule   from './EventSchedule'
 // import EventPreviewVideo from './EventPreviewVideo'
 // import ContactUs       from '../components/ContactUs'
@@ -643,7 +570,7 @@ import Sponsors        from '../components/Sponsors'
 
 export default {
   name      : 'home',
-  components: { Sponsors, callForSponsors, Gallery, NavBar, Speakers },
+  components: { HeaderWrap, Sponsors, callForSponsors, Gallery, Speakers },
   props     : [],
   data () {
     return {
@@ -666,6 +593,14 @@ export default {
         minutes: 0,
         seconds: 0
       },
+      attendeeTypes : [
+        { name : 'Frontend Developers', image : 'img1.jpg' },
+        { name : 'Backend Developers', image : 'img1.jpg' },
+        { name : 'Mobile Developer', image : 'img1.jpg' },
+        { name : 'Dev OPs', image : 'img1.jpg' },
+        { name : 'UI/UX Designers', image : 'img1.jpg' },
+        { name : 'Hiring Managers', image : 'img1.jpg' },
+      ]
       // year  : new Date().getFullYear()
     }
   },
@@ -697,16 +632,9 @@ export default {
     }
   },
   mounted () {
-    this.eventClockTimer()
+    this.eventClockTimer();
+    // new Wow().init();
+
   }
 }
 </script>
-<style scoped lang="scss">
-  .container-full-bg{
-    display: flex;
-
-    .main-actions{
-      margin: auto;
-    }
-  }
-</style>

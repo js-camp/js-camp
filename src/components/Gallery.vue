@@ -4,21 +4,18 @@
       <div class="row">
         <div class="col-12">
           <div class="section-title-header text-center">
-            <h2 class="section-title wow fadeInUp animated" data-wow-delay="0.2s"
-                style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">Event
+            <h2 class="section-title wow fadeInUp animated" v-scroll-reveal.reset="{delay : 150}">Event
               Gallery</h2>
-            <p class="wow fadeInDown animated" data-wow-delay="0.2s"
-               style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">Last Year
+            <p class="wow fadeInDown animated" v-scroll-reveal.reset="{delay : 200}">Last Year
               was fun. This year promises to be more exciting</p>
           </div>
         </div>
       </div>
       <div class="row justify-content-center" >
-        <div v-for="image in galleryData.images" @click="setSelcetedImage(image)" :key="image.url" class="ccol-md-6 col-sm-6 col-lg-3">
+        <div v-for="(image, index) in galleryData.images" v-scroll-reveal.reset="{delay : 200 + (index * 150)}" @click="setSelcetedImage(image)" :key="image.url" class="col-md-6 col-sm-6 col-lg-3">
           <div class="gallery-box">
             <div class="img-thumb">
               <div class="img-fluid" :style="`background-image: url('/img/gallery/${image.url}')`"></div>
-<!--              <img :src="`/img/gallery/${image.url}`" :alt="image.name">-->
             </div>
             <div class="overlay-box text-center">
               <a class="lightbox">
@@ -34,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div v-if="galleryData.selected !== null"
+    <div v-if="galleryData.selected !== null" @click.capture="hideLightBox"
          class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
       <div class="nivo-lightbox-wrap">
         <div class="nivo-lightbox-content">
