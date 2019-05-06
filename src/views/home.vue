@@ -3,30 +3,7 @@
   <div id="app" class="blk fp global-host ys rltv">
     <!-- Header Area wrapper SECTION Starts -->
 
-    <header id="header-wrap">
-      <!-- Navbar Start -->
-      <nav-bar></nav-bar>
-      <!-- Navbar End -->
-
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg  container-full-bg">
-        <!--        <div class="overlay"></div>-->
-        <div class="container">
-          <div class="row justify-content-center main-actions" >
-            <div class="col-lg-9 col-sm-12">
-              <div class="contents text-center">
-                <div class="banner-btn">
-                  <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
-                  <a href="#" class="btn btn-common">Apply As Speaker</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Hero Area End -->
-
-    </header>
+    <header-wrap :year="year"/>
 
     <!-- Header Area wrapper End -->
 
@@ -284,7 +261,7 @@
     <!-- Speakers Section End -->
 
     <!-- Gallery SECTION Start -->
-    <Gallery :galleryData="galleryData"/>
+    <Gallery />
     <!-- Gallery Section End -->
 
     <!-- Event Slides SECTION Start -->
@@ -299,248 +276,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-2 col-md-6 col-xs-12">
+          <div class="col-lg-2 col-md-6 col-xs-12"
+               v-for="(attendeeType, index) in attendeeTypes"
+               :key="attendeeType.name"
+               v-scroll-reveal.reset="{delay : 200 + (index * 150)}">
             <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img1.jpg" alt="">
+              <img class="img-fluid" :src="`/img/event/${'img1.jpg'}`" alt="">
               <div class="overlay-text">
                 <div class="content">
-                  <h3>Frontend Developers</h3>
+                  <h3>{{attendeeType.name}}</h3>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img2.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Backend Developers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img3.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Mobile Developer</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img4.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Dev OPs</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img3.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>UI/UX Designers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="../assets/img/event/img4.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Hiring Managers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">More Event</a>
           </div>
         </div>
       </div>
     </section>
     <!-- Event Slides Section End -->
-
-    <!-- Ticket Pricing Area Start -->
-    <!--<section id="pricing" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Ticket Pricing</h2>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="colmun-title">
-                <h5>Basic Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$29</h2>
-                <span>Per Day</span>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-close"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-close"></i><span class="text">Certificate</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper active wow fadeInUp" data-wow-delay="0.3s">
-              <div class="colmun-title">
-                <h5>Standard Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$40</h2>
-                <span>Per Day</span>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-close"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Certificate</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper wow fadeInRight" data-wow-delay="0.4s">
-              <div class="colmun-title">
-                <h5>Premium Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$68</h2>
-                <span>Per Day</span>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-close"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Certificate</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-    <!-- Ticket Pricing Area End -->
-
-    <!-- Blog SECTION Start -->
-    <!--<section id="blog" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Latest News</h2>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="../assets/img/blog/img-1.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-image"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Learn Something New
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span>
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="../assets/img/blog/img-2.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-arrow-right"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Call for sponsors
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span>
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="../assets/img/blog/img-3.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-camera"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Elon Musk joining the event
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span>
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">View all Blog</a>
-          </div>
-        </div>
-      </div>
-    </section>-->
-    <!-- Blog Section End -->
-
     <!--call for Sponsorship and pricing SECTION-->
     <callForSponsors/>
     <!-- Sponsorship and pricing SECTION End -->
@@ -627,14 +379,16 @@
 </template>
 
 <script>
-
 import { mapGetters }  from 'vuex'
+// import Wow from '../assets/js/wow'
+
 // import BJumbotron      from 'bootstrap-vue/es/components/jumbotron/jumbotron'
-import Speakers        from '../components/speakers'
-import NavBar          from '../components/Header'
+// @ is an alias to /src
+import Speakers        from '@/components/speakers'
 import Gallery         from '../components/Gallery'
 import callForSponsors from '../components/CallForSponsors'
 import Sponsors        from '../components/Sponsors'
+import HeaderWrap      from './HeaderWrap'
 // import EventSchedule   from './EventSchedule'
 // import EventPreviewVideo from './EventPreviewVideo'
 // import ContactUs       from '../components/ContactUs'
@@ -643,29 +397,26 @@ import Sponsors        from '../components/Sponsors'
 
 export default {
   name      : 'home',
-  components: { Sponsors, callForSponsors, Gallery, NavBar, Speakers },
+  components: { HeaderWrap, Sponsors, callForSponsors, Gallery, Speakers },
   props     : [],
   data () {
     return {
-      title      : 'Kobina George Koomson, Welcome',
+      title       : 'Kobina George Koomson, Welcome',
       // year       : '2019',
-      galleryData: {
-        images  : [
-          { name: 'Group Photo', url: 'reception-team.jpg' },
-          { name: 'Group Photo', url: 'participants-assembling.jpg' },
-          { name: 'Group Photo', url: 'setting-the-ball-rolling.jpg' },
-          { name: 'Group Photo', url: 'snack-break.jpg' },
-          { name: 'Group Photo', url: 'snack-break-2.jpg' },
-          { name: 'Group Photo', url: 'swag-paraph.jpg' },
-          { name: 'Group Photo', url: 'grp-ph-nc.jpg' }],
-        selected: null
-      },
       clock      : {
         days   : 0,
         hours  : 0,
         minutes: 0,
         seconds: 0
       },
+      attendeeTypes : [
+        { name : 'Frontend Developers', image : 'img1.jpg' },
+        { name : 'Backend Developers', image : 'img1.jpg' },
+        { name : 'Mobile Developer', image : 'img1.jpg' },
+        { name : 'Dev OPs', image : 'img1.jpg' },
+        { name : 'UI/UX Designers', image : 'img1.jpg' },
+        { name : 'Hiring Managers', image : 'img1.jpg' },
+      ]
       // year  : new Date().getFullYear()
     }
   },
@@ -697,16 +448,8 @@ export default {
     }
   },
   mounted () {
-    this.eventClockTimer()
+    this.eventClockTimer();
+    // new Wow().init();
   }
 }
 </script>
-<style scoped lang="scss">
-  .container-full-bg{
-    display: flex;
-
-    .main-actions{
-      margin: auto;
-    }
-  }
-</style>

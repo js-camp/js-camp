@@ -1,12 +1,16 @@
-import Home from  '../views/home'
-// import GraphicDesign from  '../views/GraphicDesign'
-// import UiDesign from  '../views/UiDesign'
+import Home          from  '../views/home'
+import SpeakeraView  from  '../views/SpeakersView'
+import EventSchedule from  '../views/EventSchedule'
 
 export default [
   { path : '/', name : 'home', component : Home },
+  { path : '/code-of-conduct',
+    name : 'coc',
+    component : () => import(/* webpackChunkName: "coc" */'../views/CodeOfConduct')
+  },
   { path : '/:year', name : 'home-page-for-year', component : Home },
-  { path : '/:year/speakers', name : 'speakers', component : Home },
-  { path : '/:year/schedule', name : 'schedule', component : Home },
+  { path : '/:year/speakers', name : 'speakers', component : SpeakeraView },
+  { path : '/:year/schedule', name : 'schedule', component : EventSchedule },
   { path : '/about',
     name : '/about',
     // route level code-splitting
