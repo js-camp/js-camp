@@ -23,7 +23,11 @@
                 :key="listItem.name" @click="setActiveNavItem(listItem.name)"
                 class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
 <!--              <a class="nav-link" :href="`/${listItem.link}`" ></a>-->
-              <router-link tag="a" class="nav-link" :to="`/${listItem.link}`" v-scroll-to="listItem.link">{{listItem.name}}</router-link>
+              <router-link tag="a" class="nav-link" :to="`/${year}${listItem.link}`" v-scroll-to="listItem.link">{{listItem.name}}</router-link>
+            </li>
+
+            <li @click="setActiveNavItem('coc')" class="nav-item" :class="{ active : activeNavItem ===  'coc' }">
+              <router-link tag="a" class="nav-link" :to="'/code-of-conduct'">Code of Conduct</router-link>
             </li>
           </ul>
         </div>
@@ -64,7 +68,6 @@ export default {
         { name : 'Speakers', link : '#speaker' },
         { name : 'Gallery', link : '#gallery' },
         { name : 'Sponsors', link : '#sponsors' },
-        { name : 'Code of Conduct', link : 'code-of-conduct' },
         // { name : 'Contact', link : '#contact' }
       ],
       topNavCollapse : false,
@@ -76,6 +79,11 @@ export default {
     }
   },
   props : ['navListSet'],
+  computed : {
+    year () {
+      return this.$route.year || new Date().getFullYear();
+    },
+  },
   methods : {
     setActiveNavItem (name) {
       this.activeNavItem = name;
@@ -98,16 +106,19 @@ export default {
 
 <style scoped lang="scss">
   @import "../assets/css/colors";
+  $transition-all-02-eio: all 0.3s ease-in-out;
+
   .navbar-brand {
     position: relative;
     padding: 0;
     div {
-      width: 100px;
-      height: 100px;
+      min-width: 100px;
+      min-height: 100px;
       -webkit-background-size: contain;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      transition: all 400ms ease-in-out;
     }
   }
 
@@ -167,10 +178,9 @@ export default {
   }
 
   .top-nav-collapse {
-    //background: #fff;
-    z-index: 999999;
+    z-index: 98;
     top: 0 !important;
-    min-height: 58px;
+    min-height: 50px;
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.06);
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -179,24 +189,30 @@ export default {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
     background: #fff !important;
-  }
 
-  .top-nav-collapse .navbar-brand {
-    top: 0;
-  }
+    .navbar-brand {
+      div {
+        max-width: 45px;
+        min-height: 45px;
+      }
+    }
+    .navbar-brand {
+      top: 0;
+    }
 
-  .top-nav-collapse .navbar-nav .nav-link {
-    color: #212121 !important;
-  }
+    .navbar-nav {
+      .nav-link {
+        color: #212121 !important;
+        &:hover {
+          color: $accent-color !important;
+        }
+      }
 
-  .top-nav-collapse .navbar-nav .nav-link:hover {
-    color: $accent-color !important;
+      li.active a.nav-link {
+        color: $accent-color !important;
+      }
+    }
   }
-
-  .top-nav-collapse .navbar-nav li.active a.nav-link {
-    color: $accent-color !important;
-  }
-
   .navbar-expand-lg .navbar-toggler {
     background: $accent-gradient;
     border: 1px solid $accent-color;

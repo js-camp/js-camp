@@ -7,7 +7,6 @@ import { store }   from './store/store'
 import Routes      from './routes/routes'
 import VueScrollReveal from 'vue-scroll-reveal';
 
-
 // import bootstrap vue related items
 // import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,6 +19,8 @@ import './assets/css/main.scss'
 // main components
 import NavBar      from './components/Nav'
 import Footer      from './components/FooterSection'
+
+export const bus = new Vue();
 
 Vue.config.productionTip = false
 

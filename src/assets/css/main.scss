@@ -510,7 +510,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .section-padding {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .no-padding {
@@ -751,7 +751,7 @@ h1 {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 90;
   color: #fff;
 }
 
@@ -1117,7 +1117,7 @@ h1 {
   padding: 45px 0;
   position: relative;
   top: -40px;
-  z-index: 999;
+  z-index: 90;
 }
 
 #information-bar ul {
@@ -1163,8 +1163,8 @@ h1 {
   padding: 45px 50px 40px 60px;
   -webkit-box-shadow: 0 8px 24px #E2E8ED;
   box-shadow: 0 8px 24px #E2E8ED;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
+  //border-radius: 4px;
+  //-webkit-border-radius: 4px;
   //-ms-border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -1708,7 +1708,7 @@ h1 {
   border-radius: 4px;
   position: relative;
   top: -40px;
-  z-index: 999;
+  z-index: 90;
 }
 
 #contact-text ul {
@@ -1893,7 +1893,7 @@ footer {
   padding: 15px 0;
   position: relative;
   top: -40px;
-  z-index: 999;
+  z-index: 90;
   display: inline-block;
   width: 100%;
 }

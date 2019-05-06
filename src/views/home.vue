@@ -3,7 +3,7 @@
   <div id="app" class="blk fp global-host ys rltv">
     <!-- Header Area wrapper SECTION Starts -->
 
-    <header-wrap/>
+    <header-wrap :year="year"/>
 
     <!-- Header Area wrapper End -->
 
@@ -261,7 +261,7 @@
     <!-- Speakers Section End -->
 
     <!-- Gallery SECTION Start -->
-    <Gallery :galleryData="galleryData"/>
+    <Gallery />
     <!-- Gallery Section End -->
 
     <!-- Event Slides SECTION Start -->
@@ -401,19 +401,8 @@ export default {
   props     : [],
   data () {
     return {
-      title      : 'Kobina George Koomson, Welcome',
+      title       : 'Kobina George Koomson, Welcome',
       // year       : '2019',
-      galleryData: {
-        images  : [
-          { name: 'Group Photo', url: 'reception-team.jpg' },
-          { name: 'Group Photo', url: 'participants-assembling.jpg' },
-          { name: 'Group Photo', url: 'setting-the-ball-rolling.jpg' },
-          { name: 'Group Photo', url: 'snack-break.jpg' },
-          { name: 'Group Photo', url: 'snack-break-2.jpg' },
-          { name: 'Group Photo', url: 'swag-paraph.jpg' },
-          { name: 'Group Photo', url: 'grp-ph-nc.jpg' }],
-        selected: null
-      },
       clock      : {
         days   : 0,
         hours  : 0,
