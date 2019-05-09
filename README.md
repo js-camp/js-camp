@@ -1,12 +1,9 @@
 <p align="center"><img src="https://github.com/js-camp/js-camp-website/blob/master/public/img/logos/js-camp-19-cy.png"></p>
 <h1 align=center><b>JS Camp</b></h1>
 <p align="center">The official website for the JS Camp Accra Community</p>
-<p align="center">
-
-<a href="https://travis-ci.org/js-camp/js-camp-website"><img src="https://travis-ci.org/js-camp/js-camp-website.svg?branch=master" alt="Build Status"></a>
+<p align="center"><a href="https://travis-ci.org/js-camp/js-camp-website"><img src="https://travis-ci.org/js-camp/js-camp-website.svg?branch=master" alt="Build Status"></a>
 <a href="https://codecov.io/gh/js-camp/js-camp-website"><img src="https://codecov.io/gh/js-camp/js-camp-website/branch/master/graph/badge.svg" alt="codecov"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-</p>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
 ### Get the code 
 ```terminal
 $ git clone https://github.com/<url>.git
