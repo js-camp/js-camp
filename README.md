@@ -1,8 +1,11 @@
 <p align="center"><img src="https://github.com/js-camp/js-camp-website/blob/master/public/img/logos/js-camp-19-cy.png"></p>
 <h1 align=center><b>JS Camp</b></h1>
 <p align="center">The official website for the JS Camp Accra Community</p>
+<p align="center">
 
 [![Build Status](https://travis-ci.org/js-camp/js-camp-website.svg?branch=master)](https://travis-ci.org/js-camp/js-camp-website) [![codecov](https://codecov.io/gh/js-camp/js-camp-website/branch/master/graph/badge.svg)](https://codecov.io/gh/js-camp/js-camp-website) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</p>
 ### Get the code 
 ```terminal
 $ git clone https://github.com/<url>.git
