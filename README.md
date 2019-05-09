@@ -3,6 +3,8 @@
 <p align="center">The official website for the JS Camp Accra Community</p>
 
 [![Build Status](https://travis-ci.org/js-camp/js-camp-website.svg?branch=master)](https://travis-ci.org/js-camp/js-camp-website) 
+
+[![codecov](https://codecov.io/gh/js-camp/js-camp-website/branch/master/graph/badge.svg)](https://codecov.io/gh/js-camp/js-camp-website)
 ### Get the code 
 ```terminal
 $ git clone https://github.com/<url>.git
