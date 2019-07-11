@@ -1,40 +1,61 @@
 <template>
   <section id="blog" class="section-padding">
     <div class="container">
-      <div class="row justify-content-sm-between">
-        <div class="col-lg-5 ml-lg-2 mr-lg-2 col-md-6 col-xs-12">
+      <div class="row justify-content-center">
+        <div class="col-lg-3 ml-lg-2 mr-lg-2 col-md-6 col-sm-12 col-xs-12">
           <div class="blog-item">
             <div class="blog-image">
-              <a href="#">
+              <router-link to="/sponsorship">
                 <img class="img-fluid" src="../assets/img/blog/img-2.jpg" alt="">
-              </a>
+              </router-link>
             </div>
             <div class="descr">
-              <div class="icon">
-                <i class="lni-arrow-right"></i>
-              </div>
+              <router-link to="/sponsorship">
+                <div class="icon">
+                  <i class="lni-arrow-right"></i>
+                </div>
+              </router-link>
               <h3 class="title">
-                <a href="#">
+                <router-link to="/sponsorship">
                   Call for sponsors
-                </a>
+                </router-link>
               </h3>
               <p>Click on here if you want to support this event</p>
             </div>
             <div class="meta-tags">
-              <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span>
+              <router-link to="/sponsorship" class="btn btn-common">Support Us</router-link>
             </div>
           </div>
         </div>
-        <div class="col-lg-5 ml-lg-2 mr-lg-2 col-md-6 col-xs-12">
+        <div class="col-lg-3 ml-lg-2 mr-lg-2 col-md-6 col-sm-12 col-xs-12">
           <div class="blog-item">
             <div class="blog-image">
-              <a href="#">
+              <a href="https://egotickets.com/events/js-camp-2019">
                 <img class="img-fluid" src="../assets/img/blog/img-2.jpg" alt="">
               </a>
             </div>
             <div class="descr">
               <h3 class="title">
-                <a href="#" class="">
+                <a href="https://egotickets.com/events/js-camp-2019" class="">
+                  Want to speak at the event? Apply here
+                </a>
+              </h3>
+            </div>
+            <div class="meta-tags">
+              <a href="bit.ly/jsc19-speak" class="btn btn-common">Apply As Speaker</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ml-lg-2 mr-lg-2 col-md-6 col-sm-12 col-xs-12">
+          <div class="blog-item">
+            <div class="blog-image">
+              <a href="https://egotickets.com/events/js-camp-2019">
+                <img class="img-fluid" src="../assets/img/blog/img-2.jpg" alt="">
+              </a>
+            </div>
+            <div class="descr">
+              <h3 class="title">
+                <a href="https://egotickets.com/events/js-camp-2019" class="">
                   This Event is FREE for everyone to attend
                 </a>
               </h3>

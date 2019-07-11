@@ -13,7 +13,7 @@
             <div class="contents page-header-inner text-center" v-if="!pastEvent">
               <div class="banner-btn">
                 <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
-                <a href="#" class="btn btn-common">Apply As Speaker</a>
+                <a href="http://bit.ly/jsc19-speak" class="btn btn-common">Apply As Speaker</a>
               </div>
             </div>
           </div>
