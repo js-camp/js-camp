@@ -42,7 +42,7 @@
               </h3>
             </div>
             <div class="meta-tags">
-              <a href="bit.ly/jsc19-speak" class="btn btn-common">Apply As Speaker</a>
+              <a href="https://bit.ly/jsc19-speak" class="btn btn-common">Apply As Speaker</a>
             </div>
           </div>
         </div>
