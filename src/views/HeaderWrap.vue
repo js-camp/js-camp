@@ -1,5 +1,5 @@
 <template>
-  <header id="">
+  <header id="home">
     <!-- Navbar Start -->
     <nav-bar></nav-bar>
     <!-- Navbar End -->
@@ -7,10 +7,10 @@
     <!-- Hero Area Start -->
     <div id="hero-area" class="hero-area-bg  container-full-bg">
       <!--        <div class="overlay"></div>-->
-      <div class="container flex-row flex" >
+      <div class="container flex-row flex">
         <div class="row justify-content-center main-actions">
           <div class=" col-lg-9 col-sm-12">
-            <div class="contents page-header-inner text-center">
+            <div class="contents page-header-inner text-center" v-if="!pastEvent">
               <div class="banner-btn">
                 <a href="https://egotickets.com/events/js-camp-2019" class="btn btn-common">Get Ticket</a>
                 <a href="#" class="btn btn-common">Apply As Speaker</a>
@@ -29,7 +29,9 @@ import NavBar from '../components/Nav'
 
 export default {
   name      : 'header-wrap',
-  components: { NavBar }
+  components: { NavBar },
+  props : ['year', 'pastEvent'],
+  computed : {}
 }
 </script>
 <style scoped lang="scss">

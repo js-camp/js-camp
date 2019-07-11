@@ -2,8 +2,9 @@
   <div>
     <!-- Navbar Start -->
     <!-- Navbar End -->
-    <div class="page-header" :style="`background-image: url('/img/gallery/${banner || 'grp-ph-nc.jpg'}')`">
-      <nav-bar ></nav-bar>
+    <div class="page-header"
+         :style="`background-image: url('/img/gallery/${banner || 'grp-ph-nc.jpg'}');` + `min-height : ${headerHeight};`">
+      <nav-bar :active="active"></nav-bar>
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -26,9 +27,11 @@ import NavBar     from '../components/Nav'
 export default {
   name: "ExtPageLayout",
   components: { NavBar },
-  props : ['banner'],
+  props : ['banner', 'active', 'options'],
   data () {
-    return {}
+    return {
+      headerHeight : this.options.headerHeight ? this.options.headerHeight + 'px' : ''
+    }
   },
   methods : {},
   computed : {}

@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -38,7 +39,8 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "surge": "^0.20.3",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "1.0.2"
   },
   "jest": {
     "coverageDirectory": "./coverage/",

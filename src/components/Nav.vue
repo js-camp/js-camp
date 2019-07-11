@@ -19,15 +19,17 @@
         <div class="collapse navbar-collapse" :class="{'show' : mobNavShow}" id="navbarCollapse">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
             <!--List Items-->
-            <li v-for="listItem in navList "
+            <li v-for="listItem in homeNavList "
                 :key="listItem.name" @click="setActiveNavItem(listItem.name)"
                 class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-<!--              <a class="nav-link" :href="`/${listItem.link}`" ></a>-->
-              <router-link tag="a" class="nav-link" :to="`/${year}${listItem.link}`" v-scroll-to="listItem.link">{{listItem.name}}</router-link>
+              <router-link tag="a" class="nav-link" v-scroll-to="listItem.link"
+                           :to="`/${year}`">{{listItem.name}}</router-link>
             </li>
 
-            <li @click="setActiveNavItem('coc')" class="nav-item" :class="{ active : activeNavItem ===  'coc' }">
-              <router-link tag="a" class="nav-link" :to="'/code-of-conduct'">Code of Conduct</router-link>
+            <li v-for="listItem in extNavList "
+                :key="listItem.name" @click="setActiveNavItem(listItem.name)"
+                class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
+              <router-link tag="a" class="nav-link" :to="listItem.link">{{listItem.name}}</router-link>
             </li>
           </ul>
         </div>
@@ -40,7 +42,7 @@
 import Vue from 'vue'
 import VueScrollTo from 'vue-scrollto'
 
-Vue.use(VueScrollTo)
+// Vue.use(VueScrollTo)
 
 // You can also pass in the default options
 Vue.use(VueScrollTo, {
@@ -49,9 +51,11 @@ Vue.use(VueScrollTo, {
   easing: "ease",
   offset: 0,
   force: true,
-  cancelable: true,
+  cancelable: false,
   onStart: false,
-  onDone: false,
+  onDone: function () {
+    console.log('scroll-done');
+  },
   onCancel: false,
   x: false,
   y: true
@@ -60,15 +64,19 @@ export default {
   name : "NavBar",
   data () {
     return {
-      activeNavItem : 'Home',
-      navList : this.navListSet || [
-        { name : 'Home', link : '#' },
+      activeNavItem : this.active || 'Home',
+      homeNavList : this.navListSet || [
+        { name : 'Home', link : '#home' },
         { name : 'About', link : '#about' },
         // { name : 'Schedules', link : '#schedules' },
         { name : 'Speakers', link : '#speaker' },
         { name : 'Gallery', link : '#gallery' },
         { name : 'Sponsors', link : '#sponsors' },
         // { name : 'Contact', link : '#contact' }
+      ],
+      extNavList : [
+        { name : 'Call for Sponsors', link : '/sponsorship' },
+        { name : 'Code of Conduct', link : '/code-of-conduct' },
       ],
       topNavCollapse : false,
       mobNavShow : false,
@@ -78,10 +86,10 @@ export default {
       }
     }
   },
-  props : ['navListSet'],
+  props : ['navListSet', 'active'],
   computed : {
     year () {
-      return this.$route.year || new Date().getFullYear();
+      return this.$route.params.year || new Date().getFullYear();
     },
   },
   methods : {

@@ -3,29 +3,12 @@
   <div id="app" class="blk fp global-host ys rltv">
     <!-- Header Area wrapper SECTION Starts -->
 
-    <header-wrap :year="year"/>
+    <header-wrap :year="year" :past-event="pastEvent"/>
 
     <!-- Header Area wrapper End -->
 
     <!-- Time left Count Bar SECTION Start -->
-    <section id="count">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-10">
-            <div class="count-wrapper text-center">
-              <div class="time-countdown wow fadeInUp" data-wow-delay="0.2s">
-                <div id="clock" class="time-count">
-                  <div class="time-entry days"><span>{{clock.days}}</span> <b>:</b> Days</div>
-                  <div class="time-entry hours"><span>{{clock.hours}}</span> <b>:</b> Hours</div>
-                  <div class="time-entry minutes"><span>{{clock.minutes}}</span> <b>:</b> Minutes</div>
-                  <div class="time-entry seconds"><span>{{clock.seconds}}</span> Seconds</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <count-down-clock :date="events.years[year].date" v-if="!pastEvent" />
     <!-- Time left Count Bar End -->
 
     <!-- About SECTION Start -->
@@ -294,7 +277,7 @@
     </section>
     <!-- Event Slides Section End -->
     <!--call for Sponsorship and pricing SECTION-->
-    <callForSponsors/>
+    <sponsors-and-ticket-section  v-if="!pastEvent"/>
     <!-- Sponsorship and pricing SECTION End -->
 
     <!-- Sponsors Section Start -->
@@ -379,16 +362,16 @@
 </template>
 
 <script>
-import { mapGetters }  from 'vuex'
-// import Wow from '../assets/js/wow'
-
+import { mapGetters }           from 'vuex'
 // import BJumbotron      from 'bootstrap-vue/es/components/jumbotron/jumbotron'
 // @ is an alias to /src
-import Speakers        from '@/components/speakers'
-import Gallery         from '../components/Gallery'
-import callForSponsors from '../components/CallForSponsors'
-import Sponsors        from '../components/Sponsors'
-import HeaderWrap      from './HeaderWrap'
+import Speakers                 from '@/components/speakers'
+import Gallery                  from '../components/Gallery'
+import SponsorsAndTicketSection from '../components/SponsorsAndTicketSection'
+import Sponsors                 from '../components/Sponsors'
+import HeaderWrap               from './HeaderWrap'
+import CountDownClock           from './CountDownClock'
+// import Wow from '../assets/js/wow'
 // import EventSchedule   from './EventSchedule'
 // import EventPreviewVideo from './EventPreviewVideo'
 // import ContactUs       from '../components/ContactUs'
@@ -397,18 +380,12 @@ import HeaderWrap      from './HeaderWrap'
 
 export default {
   name      : 'home',
-  components: { HeaderWrap, Sponsors, callForSponsors, Gallery, Speakers },
+  components: { CountDownClock, HeaderWrap, Sponsors, SponsorsAndTicketSection, Gallery, Speakers },
   props     : [],
   data () {
     return {
       title       : 'Kobina George Koomson, Welcome',
       // year       : '2019',
-      clock      : {
-        days   : 0,
-        hours  : 0,
-        minutes: 0,
-        seconds: 0
-      },
       attendeeTypes : [
         { name : 'Frontend Developers', image : 'img1.jpg' },
         { name : 'Backend Developers', image : 'img1.jpg' },
@@ -422,33 +399,16 @@ export default {
   },
   computed  : {
     year () {
-      return this.$route.year || new Date().getFullYear();
+      return this.$route.params.year || new Date().getFullYear();
+    },
+    pastEvent : function () {
+      return this.$route.params.year ?  parseInt(this.$route.params.year, 10) < parseInt(new Date().getFullYear(), 10)  : false;
     },
     ...mapGetters(['community', 'events'])
   },
-  methods   : {
-    eventClockTimer () {
-      let timerDifference = (new Date('2019-08-31')).getTime() - (new Date()).getTime()
-      let floor = Math.floor
-
-      let seconds = floor(timerDifference / 1000)
-      let minutes = floor(seconds / 60)
-      let hours = floor(minutes / 60)
-
-      this.$data.clock = {
-        days   : floor(hours / 24),
-        hours  : hours % 24,
-        minutes: minutes % 60,
-        seconds: floor(seconds) % 60
-      }
-
-      seconds = minutes = hours = null
-
-      setTimeout(this.eventClockTimer, 1000)
-    }
-  },
+  methods   : {},
   mounted () {
-    this.eventClockTimer();
+    // this.eventClockTimer();
     // new Wow().init();
   }
 }

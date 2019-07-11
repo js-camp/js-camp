@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ext-page-layout>
+    <ext-page-layout :active="'Code of Conduct'" :options="extPageOptions">
       <h1 class="page-title" slot="page-title">Conference Code of Conduct</h1>
 
       <section id="cta" class="section-padding" slot="main-content">
@@ -63,7 +63,10 @@ export default {
   components: { 'ext-page-layout': ExtPageLayout },
   props     : [],
   data () {
-    return {}
+    return {
+      extPageOptions : {
+      }
+    }
   },
   methods   : {},
   computed  : {
