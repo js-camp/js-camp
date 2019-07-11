@@ -13,7 +13,8 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div v-for="image in galleryData.images" :key="image.url" v-scroll-reveal.reset="{delay : 200 + (index * 150)}"
+        <div v-for="(image, index) in galleryData.images" :key="image.url"
+             v-scroll-reveal.reset="{delay : 200 + (index * 150)}"
              @click="setSelectedImage(image)" class="ccol-md-6 col-sm-6 col-lg-3">
           <div class="gallery-box">
             <div class="img-thumb">
@@ -44,7 +45,8 @@ import LightBox from './LightBox'
 export default {
   name    : 'Gallery',
   components: { LightBox },
-  data () {
+  data ()
+  {
     return {
       publicPath   : process.env.BASE_URL,
       galleryData  : {

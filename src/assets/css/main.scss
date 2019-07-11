@@ -118,12 +118,12 @@ ul li, ol li {
   margin-bottom: 10px;
 
   &:before {
-    content: "[";
+    content: "-";
     color: $accent-color;
     padding-right: 10px;
   }
   &:after {
-    content: "]";
+    content: "-";
     color: $accent-color;
     padding-left: 10px;
   }

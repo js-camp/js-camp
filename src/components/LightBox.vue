@@ -19,9 +19,13 @@
 <script>
 export default {
   name : 'light-box',
+  props: {
+    galleryData : {},
+    selectedImage: {}
+  },
   data () {
     return {
-      maxIndex : this.galleryData.images.length - 1
+      maxIndex : this.galleryData ? this.galleryData.images.length - 1 : 0
     }
   },
   computed: {
@@ -32,16 +36,13 @@ export default {
       return this.galleryData.selected !== null ? this.galleryData.images.indexOf(this.selectedImage) : -1
     }
   },
+  created () {
+    window.addEventListener('keyup', this.keyEventsHandler)
+  },
+  destroyed () {
+    window.removeEventListener('keyup', this.keyEventsHandler);
+  },
   methods : {
-    setSelectedImage (image) {
-      this.$emit('setSelected', image)
-    },
-    next () {
-      this.setSelectedImage(this.currentImageIndex < this.maxIndex ? this.galleryData.images[this.currentImageIndex + 1] : this.galleryData.images[0])
-    },
-    previous () {
-      this.setSelectedImage(this.galleryData.images[this.currentImageIndex > 0 ? this.currentImageIndex - 1 : this.maxIndex])
-    },
     hideLightBox () {
       this.setSelectedImage(null)
     },
@@ -53,17 +54,16 @@ export default {
       } else if (e.key === 'Escape') {
         this.hideLightBox()
       }
+    },
+    next () {
+      this.setSelectedImage(this.currentImageIndex < this.maxIndex ? this.galleryData.images[this.currentImageIndex + 1] : this.galleryData.images[0])
+    },
+    previous () {
+      this.setSelectedImage(this.galleryData.images[this.currentImageIndex > 0 ? this.currentImageIndex - 1 : this.maxIndex])
+    },
+    setSelectedImage (image) {
+      this.$emit('setSelected', image)
     }
-  },
-  created () {
-    window.addEventListener('keyup', this.keyEventsHandler)
-  },
-  destroyed () {
-    window.removeEventListener('keyup', this.keyEventsHandler);
-  },
-  props: {
-    selectedImage: {},
-    galleryData : {}
   }
 }
 </script>

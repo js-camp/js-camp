@@ -20,7 +20,7 @@
             </ul>
           </div>
           <div class="site-info">
-            <p>Copyright © {{community.name}}. {{year}}</p>
+            <p>Copyright © {{community.name}}. {{year}}&mdash;</p>
           </div>
         </div>
       </div>

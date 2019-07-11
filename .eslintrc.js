@@ -32,7 +32,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  env: {
+  env:  {
     node: true
   },
   'extends': [

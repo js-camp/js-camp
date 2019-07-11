@@ -6,7 +6,11 @@ export default [
   { path : '/', name : 'home', component : Home },
   { path : '/code-of-conduct',
     name : 'coc',
-    component : () => import(/* webpackChunkName: "coc" */'../views/CodeOfConduct')
+    component : () => import(/* webpackChunkName: "coc" */ '../views/CodeOfConduct')
+  },
+  { path : '/sponsorship',
+    name : 'sponsorship',
+    component : () => import(/* webpackChunkName: "sponsorship" */ '../views/CallForSponsors')
   },
   { path : '/:year', name : 'home-page-for-year', component : Home },
   { path : '/:year/speakers', name : 'speakers', component : SpeakeraView },
